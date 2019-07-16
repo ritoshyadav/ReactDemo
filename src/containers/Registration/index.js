@@ -73,9 +73,6 @@ class Registration extends Component {
             body: JSON.stringify({ username: email, password }) // body data type must match "Content-Type" header
         }).then(res => {
             console.log("response form server===>", res);
-            if (res.status === 404) {
-                return { success: false, statusCode: 404 }
-            }
             return res.json();
         }).then(response => {
             console.log("response json===>", response);
